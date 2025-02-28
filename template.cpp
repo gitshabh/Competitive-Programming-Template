@@ -9,8 +9,10 @@ using namespace std;
 #define No cout<<"NO\n"
 #define ff first
 #define ss second
-#define vi vector<long long>
-#define pii pair<long long, long long>
+#define vi vector<int>
+#define pii pair<int,int>
+#define vpii vector<pair<int,int>>
+#define vvi vector<vector<int>>
 #define all(x) x.begin(),x.end()
 #define rall(x) x.rbegin(),x.rend()
 const int inf = 2e18;
@@ -20,6 +22,8 @@ void print(vector<int> v,string label="") {cout<<label;for(int i=0;i<v.size();i+
 int modPow(int a,int b,int p) {int ans=1;while(b>0){if((b&1)==1)ans=ans*a%p;a=a*a%p;b>>=1;}return ans;}
 int modDiv(int a,int b,int p) {return a * modPow(b,p-2,p) % p;}
 bool isPow2(int n) {return (n>0 && (n&(n-1)) == 0);}
+int power(int a,int b) {int ans=1;while(b>0){if((b&1)==1)ans=ans*a;a=a*a;b>>=1;}return ans;}
+int squareroot(int n) {int s=0,e=n;int ans;while(s<=e){int m=(s + e)/2;if(m<=LLONG_MAX/m && m*m<=n){s=m+1;ans=m;}else{e=m-1;}}return ans;}
 
 void solve(int testcase)
 {
